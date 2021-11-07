@@ -86,11 +86,11 @@ WSGI_APPLICATION = "bank_api.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "password",
-        "HOST": "0.0.0.0",
-        "PORT": "5432",
+        "NAME": os.environ.get("POSTGRESQL_ADDON_DB"),
+        "USER": os.environ.get("POSTGRESQL_ADDON_USER"),
+        "PASSWORD": os.environ.get("POSTGRESQL_ADDON_PASSOWRD"),
+        "HOST": os.environ.get("POSTGRESQL_ADDON_HOST"),
+        "PORT": os.environ.get("POSTGRESQL_ADDON_PORT"),
     }
 }
 

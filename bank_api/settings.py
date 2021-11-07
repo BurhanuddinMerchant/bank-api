@@ -88,7 +88,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": os.environ.get("POSTGRESQL_ADDON_DB"),
         "USER": os.environ.get("POSTGRESQL_ADDON_USER"),
-        "PASSWORD": os.environ.get("POSTGRESQL_ADDON_PASSOWRD"),
+        "PASSWORD": os.environ.get("POSTGRESQL_ADDON_PASSOWORD"),
         "HOST": os.environ.get("POSTGRESQL_ADDON_HOST"),
         "PORT": os.environ.get("POSTGRESQL_ADDON_PORT"),
     }

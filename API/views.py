@@ -3,6 +3,7 @@ from rest_framework import generics, viewsets
 from rest_framework.serializers import Serializer
 from .serializers import BankSerializer
 from .models import Bank
+from django.db.models import Q
 
 
 class BankViewSet(viewsets.ModelViewSet):
@@ -41,7 +42,14 @@ class BankFilteredSearchView(generics.ListAPIView):
         if limit is not None and offset is not None:
             queryset = (
                 Bank.objects.all()
-                .filter(city=query)
+                .filter(
+                    Q(ifsc=query)
+                    | Q(branch=query)
+                    | Q(address=query)
+                    | Q(city=query)
+                    | Q(district=query)
+                    | Q(state=query)
+                )
                 .order_by("ifsc")[int(offset) : int(offset) + int(limit)]
             )
             return queryset

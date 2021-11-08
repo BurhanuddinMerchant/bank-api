@@ -1,6 +1,7 @@
 # Bank API Endpoints
 
 PostgreSQL Database hosted on [CLEVER CLOUD](https://www.clever-cloud.com/) as an Add-On resource
+
 Django Project hosted on Heroku [here](https://bank-api-task.herokuapp.com/api/)
 Used [DRF](https://www.django-rest-framework.org/) for making the REST API's
 
